@@ -1,0 +1,20 @@
+<div >
+  <input
+  type="text"
+  class="form-control"
+  placeholder="Enter your name"
+  [(ngModel)]="myName">
+  <br>
+  <p>
+    {{myName}}
+  </p>
+  <button
+    type="btn"
+    class="btn btn-primary"
+    [disabled]="onReset()"
+    (click)="onEraseInput()">
+      Reset
+  </button>
+</div>
+
+
