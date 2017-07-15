@@ -8,6 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class TestComponent implements OnInit {
   myName = '';
   allowDisableBtn = true;
+  displayDetail = false;
+  btnClicks = [];
+  btnClicksPlus = [];
+  theFithElement = true;
+  clicksLength = '';
   constructor() { }
 
   ngOnInit() {
@@ -24,6 +29,29 @@ export class TestComponent implements OnInit {
 
   onEraseInput() {
     this.myName = '';
+  }
+
+  onDisplayDetail() {
+    this.displayDetail = !this.displayDetail;
+    if (this.btnClicks.length >= 5) {
+      this.theFithElement = false;
+      this.btnClicksPlus.push(1);
+    }else {
+      this.btnClicks.push(1);
+    }
+  }
+
+  onFithItem() {
+    // return this.btnClicks.length > 5 ? 'blue' : 'white';
+    return 'blue';
+  }
+
+  btnsLength() { // Method to get the length of btnsClicks
+    return String(this.btnClicks.length);
+  }
+
+  btnsPlusLength() { // Method to get the length of btnsClicksPlus
+    return String(this.btnClicksPlus.length);
   }
 
 }

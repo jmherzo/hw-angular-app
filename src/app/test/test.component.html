@@ -16,5 +16,31 @@
       Reset
   </button>
 </div>
+<br>
+<div>
+    <button type="btn"
+    class= "btn"
+    (click)="onDisplayDetail()">
+      Display Details
+    </button>
+    <br>
+    <p *ngIf="displayDetail"> Secret Password = pombi</p>
+
+      <!-- Array to output the first 5 elements  -->
+      <p *ngFor="let btn of btnClicks">
+        Button was clicked
+      </p>
+
+      <!-- Array lengths for debugging purposes  -->
+      <!-- <p>{{btnsLength()}}</p>
+      <p>{{btnsPlusLength()}}</p> -->
+
+      <!-- Array to output the elements after the 5th element  -->
+      <p *ngFor="let btns of btnClicksPlus"
+        [ngStyle]="{backgroundColor:onFithItem()}"
+        [ngClass]="{fithElement : theFithElement === false}">
+        Button was clicked
+      </p>
+</div>
 
 
