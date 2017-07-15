@@ -33,7 +33,7 @@ export class TestComponent implements OnInit {
 
   onDisplayDetail() {
     this.displayDetail = !this.displayDetail;
-    if (this.btnClicks.length >= 5) {
+    if (this.btnClicks.length >= 4) {
       this.theFithElement = false;
       this.btnClicksPlus.push(1);
     }else {
