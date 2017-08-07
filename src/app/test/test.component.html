@@ -27,20 +27,16 @@
     <p *ngIf="displayDetail"> Secret Password = pombi</p>
 
       <!-- Array to output the first 5 elements  -->
-      <p *ngFor="let btn of btnClicks">
-        Button was clicked
+      <p
+        *ngFor = "let btn of btnClicks;let i = index"
+        [ngStyle] = "{backgroundColor: i >= 4 ? 'blue' : 'transparent'}"
+        [ngClass]="{fithElement : i>=4}" >
+        {{btn}}
       </p>
 
       <!-- Array lengths for debugging purposes  -->
-      <!-- <p>{{btnsLength()}}</p>
-      <p>{{btnsPlusLength()}}</p> -->
+      <!-- <p>{{btnsLength()}}</p> -->
 
-      <!-- Array to output the elements after the 5th element  -->
-      <p *ngFor="let btns of btnClicksPlus"
-        [ngStyle]="{backgroundColor:onFithItem()}"
-        [ngClass]="{fithElement : theFithElement === false}">
-        Button was clicked
-      </p>
 </div>
 
 
